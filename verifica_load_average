@@ -1,0 +1,2 @@
+#Adicionar no Cron
+*/15 * * * * awk '{ if ($1 > 100.0) print "O load average atual é "$1", que está acima do limite de 100." | "mailx -r \"send-alerta@email.com\" -s \"Alerta: Servidor X Prod - Load Average Alto "$1"\" lista-recebe-alerta@email.com" }' /proc/loadavg
